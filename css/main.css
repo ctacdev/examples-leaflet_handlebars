@@ -1,0 +1,38 @@
+body {
+  padding-top: 50px;
+}
+
+#map {
+  height: 400px;
+}
+
+.info {
+  padding: 6px 8px;
+  font: 12px/13px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  float: left;
+  text-align: left;
+}
+.info_box_header {
+  font: 14px Arial;
+  padding: 0px;
+  margin: 0 0 10px;
+}
+.legend {
+  line-height: 12px;
+  color: #555;
+  padding: 6px 8px;
+  font: 6px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.legend i {
+  width: 10px;
+  height: 10px;
+  float: left;
+  margin-right: 8px;
+}

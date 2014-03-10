@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CTAC Leaflet/Handlebars</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/leaflet.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="javascript/html5shiv.min.js"></script>
+      <script src="javascript/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CTAC Leaflet + Handlebars</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Example</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Leaflet / Handlebars Demo</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Map</h2>
+        </div>
+        <div class="col-xs-12" id="map">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Table</h2>
+        </div>
+        <div class="col-xs-12" id="table-container">
+        </div>
+      </div>
+    </div>
+
+    <script id="info-template" type="text/x-handlebars-template">
+      <div>
+      <p>Vaccination Claims Rate</p>
+      {{#if name}}
+        <p>{{name}}</p>
+        {{#if count}}
+        <p>Beneiciaries: {{count}}</p>
+        {{/if}}
+        {{#if percentage}}
+        <p>Rate: {{percentage}}</p>
+        {{/if}}
+      {{else}}
+        <p>Hover over a region for data.</p>
+      {{/if}}
+      </div>
+    </script>
+    <script id="table-template" type="text/x-handlebars-template">
+      <table class="table table-striped table-bordered" id="states_table">
+        <tbody>
+          <tr>
+            <th scope="col">State Name</th>
+            <th scope="col">Beneficiaries</th>
+            <th scope="col">Rate</th>
+          </tr>
+          {{#each this}}
+            <tr>
+              <th scope="row">{{name}}</th>
+              <td>{{count}}</td>
+              <td>{{percentage}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="javascript/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/leaflet.min.js"></script>
+    <script src="javascript/underscore.min.js"></script>
+    <script src="javascript/handlebars.js"></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>
