@@ -15,6 +15,7 @@ function start(){
       initialize_map();
       initialize_info_box();
       initialize_legend();
+      intialize_reset_button();
       initialize_table();
       draw_states();
     })
@@ -69,6 +70,19 @@ function initialize_legend(){
   map.addControl(legend);
 }
 
+/* Initialize reset button */
+function intialize_reset_button(){
+  reset_button = L.control({position: 'bottomleft'});
+  reset_button.onAdd = function(map){
+    var div = L.DomUtil.create('div', 'info');
+    div.innerHTML='<a class="reset_button" href="#" title="Reset Map">Reset</a>';
+    return div;
+  }
+  map.addControl(reset_button);
+  $('.reset_button').click(function(){
+    map.fitBounds(state_layer.getBounds());
+  });
+}
 /* Initializes a table, uses handlebars to fill in data */
 function initialize_table(){
   table = $('#table-container');
@@ -143,6 +157,7 @@ function state_features(feature, layer){
   // add click, mouseover, and mouseout interactions to state
   layer.on({
     click: function(){
+      map.fitBounds(layer.getBounds());
       // Here we could something interesting, like grab county data
       // change styles, whatever we'd be interested in
     },
