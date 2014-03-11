@@ -16,6 +16,16 @@ body {
   float: left;
   text-align: left;
 }
+.reset {
+  padding: 6px 8px;
+  font: 12px/13px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  float: left;
+  text-align: left;
+}
 .info_box_header {
   font: 14px Arial;
   padding: 0px;

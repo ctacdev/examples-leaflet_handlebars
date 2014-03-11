@@ -9,7 +9,7 @@ var color_array = ["rgb(103,0,31)","rgb(178,24,43)","rgb(214,96,77)","rgb(244,16
 // Loads data, initializes map, draws everything.
 function start(){
   $.getJSON("data/state_geo.json",function(us_states){
-    $.getJSON('http://flu-vaccination-map.hhs.gov/api/v1/states.json?ethnicity=all&callback=?',function(data){
+    $.getJSON("data/state_data.json",function(data){
       states_geo_json= us_states;
       states_data = data.results;
       initialize_map();
@@ -73,12 +73,12 @@ function initialize_legend(){
 function intialize_reset_button(){
   reset_button = L.control({position: 'bottomleft'});
   reset_button.onAdd = function(map){
-    var div = L.DomUtil.create('div', 'info');
+    var div = L.DomUtil.create('div', 'reset');
     div.innerHTML='<a class="reset_button" href="#" title="Reset Map">Reset</a>';
     return div;
   }
   map.addControl(reset_button);
-  $('.reset_button').click(function(){
+  $('.reset, .reset_button').click(function(){
     map.fitBounds(state_layer.getBounds());
   });
 }
