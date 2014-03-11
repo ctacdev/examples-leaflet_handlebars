@@ -13,16 +13,11 @@ function start(){
       states_geo_json= us_states;
       states_data = data.results;
       initialize_map();
-      initialize_info_box();
-      initialize_legend();
-      intialize_reset_button();
-      initialize_table();
       draw_states();
     })
   });
 }
 start();
-
 /* Create map, center it */
 function initialize_map(){
   map = new L.Map("map", {})
@@ -31,12 +26,16 @@ function initialize_map(){
     .addLayer(new L.TileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }));
+  initialize_info_box();
+  initialize_legend();
+  intialize_reset_button();
+  initialize_table();
 }
 // Initializes the info box, which uses a handlebars template
 function initialize_info_box(){
   info = L.control();
   // Prepare Template
-  var info_source   = $("#info-template").html();
+  var info_source   = $("#info_template").html();
   var info_template = Handlebars.compile(info_source);
   info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -85,8 +84,8 @@ function intialize_reset_button(){
 }
 /* Initializes a table, uses handlebars to fill in data */
 function initialize_table(){
-  table = $('#table-container');
-  var table_source = $("#table-template").html();
+  table = $('#table_container');
+  var table_source = $("#table_template").html();
   var table_template = Handlebars.compile(table_source);
   table.html(table_template(states_data));
 }
