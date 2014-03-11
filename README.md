@@ -1,4 +1,4 @@
-# Leaflet, Handlebars Example Application
+# Leaflet+Handlebars Example
 
 ## Starting
 
@@ -12,4 +12,4 @@ On mac osx, this can be accomplished by running this command in the root directo
 * Handlebars.js
 * Underscore.js
 * Bootstrap
-* jquery
+* jQuery
