@@ -4,7 +4,9 @@
 
 Start a webserver at the root directory and browse to index.html
 
-On mac osx, this can be accomplished by running this command in the root directory: python -m SimpleHTTPServer
+On mac osx, this can be accomplished by running this command in the root directory: 
+
+python -m SimpleHTTPServer
 
 ## Technologies
 
