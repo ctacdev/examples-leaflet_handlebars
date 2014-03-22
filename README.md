@@ -17,6 +17,6 @@ python -m SimpleHTTPServer
 * jQuery
 
 ## Do more
-If people need / want to do more with the leaflet example, I'd recommend:
+Recommended other improvements:
 * Implement layers of other data
 * Implement other controls
