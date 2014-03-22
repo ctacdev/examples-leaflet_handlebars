@@ -15,3 +15,8 @@ python -m SimpleHTTPServer
 * Underscore.js
 * Bootstrap
 * jQuery
+
+## Do more
+If people need / want to do more with the leaflet example, I'd recommend:
+* Implement layers of other data
+* Implement other controls
